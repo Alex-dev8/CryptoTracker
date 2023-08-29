@@ -16,6 +16,9 @@
 		FA4134F22A98887D00B653FB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4134F12A98887D00B653FB /* Color.swift */; };
 		FA4134F82A988BAE00B653FB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4134F72A988BAE00B653FB /* HomeView.swift */; };
 		FA4134FC2A98A2E400B653FB /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4134FB2A98A2E400B653FB /* CircleButtonView.swift */; };
+		FAEDEEFF2A9DCC0100AD8852 /* CoinRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDEEFE2A9DCC0100AD8852 /* CoinRowView.swift */; };
+		FAEDEF012A9DCC6100AD8852 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDEF002A9DCC6100AD8852 /* PreviewProvider.swift */; };
+		FAEDEF052A9DCF4B00AD8852 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDEF042A9DCF4B00AD8852 /* Double.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		FA4134F12A98887D00B653FB /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		FA4134F72A988BAE00B653FB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FA4134FB2A98A2E400B653FB /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
+		FAEDEEFE2A9DCC0100AD8852 /* CoinRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRowView.swift; sourceTree = "<group>"; };
+		FAEDEF002A9DCC6100AD8852 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
+		FAEDEF042A9DCF4B00AD8852 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				FA4134F12A98887D00B653FB /* Color.swift */,
+				FAEDEF002A9DCC6100AD8852 /* PreviewProvider.swift */,
+				FAEDEF042A9DCF4B00AD8852 /* Double.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -118,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				FA4134F72A988BAE00B653FB /* HomeView.swift */,
+				FAEDEEFE2A9DCC0100AD8852 /* CoinRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,12 +225,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAEDEEFF2A9DCC0100AD8852 /* CoinRowView.swift in Sources */,
 				FA4134E52A9885CF00B653FB /* ContentView.swift in Sources */,
 				FA4134F82A988BAE00B653FB /* HomeView.swift in Sources */,
 				FA4134E32A9885CF00B653FB /* CryptoTrackerApp.swift in Sources */,
 				FA4134FC2A98A2E400B653FB /* CircleButtonView.swift in Sources */,
 				FA4134F22A98887D00B653FB /* Color.swift in Sources */,
 				FA358E462A9B4EC50002BB32 /* CircleButtonAnimationView.swift in Sources */,
+				FAEDEF012A9DCC6100AD8852 /* PreviewProvider.swift in Sources */,
+				FAEDEF052A9DCF4B00AD8852 /* Double.swift in Sources */,
 				FA358E492A9B51810002BB32 /* CoinModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,7 +371,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -392,7 +404,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
