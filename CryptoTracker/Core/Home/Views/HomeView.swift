@@ -21,10 +21,18 @@ struct HomeView: View {
             // content layer
             VStack {
                 homeHeader
+                HomeStatsView(showPortfolio: $showPortfolio)
+                SearchBarView(searchText: $vm.searchText)
+                    .padding()
                 columnTitles
                 if !showPortfolio {
-                    allCoinsList
-                        .transition(.move(edge: .leading))
+                    if !vm.allCoins.isEmpty {
+                        allCoinsList
+                            .transition(.move(edge: .leading))
+                    } else {
+                        Spacer()
+                        ProgressView()
+                    }
                 }
                 if showPortfolio {
                     portfolioCoinsList

@@ -18,9 +18,9 @@ class CoinDataService {
     }
     
     private func getCoins() {
-        let stringUrl = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=true&price_change_percentage=24h&locale=en"
+        let stringURL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=true&price_change_percentage=24h&locale=en"
         
-        guard let url = URL(string: stringUrl) else {
+        guard let url = URL(string: stringURL) else {
             return
         }
         
