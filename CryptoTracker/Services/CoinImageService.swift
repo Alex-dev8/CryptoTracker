@@ -41,6 +41,7 @@ class CoinImageService {
             .tryMap({ (data) -> UIImage? in
                 return UIImage(data: data)
             })
+            .receive(on: DispatchQueue.main) // Downloading always happens on background thread, so we must explicitly say we want to receive on main thread
             .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] returnedImage in
                 guard let self = self, let downloadedImage = returnedImage else { return }
                 self.image = downloadedImage

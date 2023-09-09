@@ -12,6 +12,9 @@ struct HomeView: View {
     @EnvironmentObject private var vm: HomeViewModel
     @State private var showPortfolio: Bool = false // Animate right
     @State private var showPortfolioView: Bool = false // New sheet
+    @State private var showSettingsView: Bool = false
+    @State private var selectedCoin: CoinModel?
+    @State private var showDetailView: Bool = false
     
     var body: some View {
         ZStack {
@@ -41,10 +44,14 @@ struct HomeView: View {
                     }
                 }
                 if showPortfolio {
+                    portfolioEmptyText
                     portfolioCoinsList
                         .transition(.move(edge: .trailing))
                 }
                 Spacer()
+            }
+            .sheet(isPresented: $showSettingsView) {
+                SettingsView()
             }
         }
     }
@@ -66,6 +73,8 @@ extension HomeView {
                 .onTapGesture {
                     if showPortfolio {
                         showPortfolioView.toggle()
+                    } else {
+                        showSettingsView.toggle()
                     }
                 }
                 .background(
@@ -90,10 +99,11 @@ extension HomeView {
     }
     
     private var allCoinsList: some View {
-        List {
-            ForEach(vm.allCoins) { coin in
+        List(vm.allCoins, id: \.id) { coin in
+            NavigationLink(destination: DetailView(coin: coin)) {
                 CoinRowView(coin: coin, showHoldingsColumn: false)
                     .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                    .listRowBackground(Color.theme.background)
             }
         }
         .refreshable {
@@ -108,6 +118,7 @@ extension HomeView {
             ForEach(vm.portfolioCoins) { coin in
                 CoinRowView(coin: coin, showHoldingsColumn: true)
                     .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                    .listRowBackground(Color.theme.background)
             }
         }
         .refreshable {
@@ -115,6 +126,20 @@ extension HomeView {
             print("[⤵] Reloading...")
         }
         .listStyle(.plain)
+    }
+    
+    private var portfolioEmptyText: some View {
+        ZStack {
+            if vm.portfolioCoins.isEmpty && vm.searchText.isEmpty {
+                Text("You haven't added any coins to your portfolio yet. Tap the + button to get started. 🧐")
+                    .font(.callout)
+                    .fontWeight(.medium)
+                    .foregroundColor(Color.theme.accent)
+                    .multilineTextAlignment(.center)
+                    .padding(50)
+            }
+        }
+        .transition(.move(edge: .trailing))
     }
     
     private var columnTitles: some View {

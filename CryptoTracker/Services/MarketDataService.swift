@@ -25,6 +25,7 @@ class MarketDataService {
         
         marketDataSubscription = NetworkingManager.download(url: url)
             .decode(type: GlobalData.self, decoder: JSONDecoder())
+            .receive(on: DispatchQueue.main) // receive on main thread
             .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] returnedGlobalData in
                 self?.marketData = returnedGlobalData.data
                 self?.marketDataSubscription?.cancel()
